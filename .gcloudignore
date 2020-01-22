@@ -13,9 +13,5 @@
 # Transitively include anything that isn't part of the git repo.
 #!include:.gitignore
 
-# This is not part of the git repo so it's ignored by .gitignore, but we do
-# want to deploy it.
-!config.json
-
 # These don't exist for us (yet?).
 node_modules
