@@ -1,0 +1,22 @@
+{
+  "name": "chromium-slack-event-bot",
+  "version": "0.0.1",
+  "private": true,
+  "license": "BSD-style",
+  "author": "The Chromium Authors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danakj/chromium-slack-event-bot.git"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "@slack/events-api": "^2.2.0",
+    "@slack/web-api": "^5.7.0"
+  },
+  "cloud-repo-tools": {
+    "requiresKeyFile": true,
+    "requiresProjectId": true
+  }
+}

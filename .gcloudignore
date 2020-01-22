@@ -1,0 +1,21 @@
+# This file specifies files that are *not* uploaded to Google Cloud Platform
+# using gcloud. It follows the same syntax as .gitignore, with the addition of
+# "#!include" directives (which insert the entries of the given .gitignore-style
+# file at that point).
+#
+# For more information, run:
+#   $ gcloud topic gcloudignore
+#
+.gcloudignore
+.git
+.gitignore
+
+# Transitively include anything that isn't part of the git repo.
+#!include:.gitignore
+
+# This is not part of the git repo so it's ignored by .gitignore, but we do
+# want to deploy it.
+!config.json
+
+# These don't exist for us (yet?).
+node_modules
