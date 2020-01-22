@@ -8,12 +8,10 @@ This is written as a Google Cloud Function.
 
 ## Deployment
 
-See the [Cloud Functions Slack tutorial][tutorial].
-
 To deploy this you need to:
-a) Be a Googler (see [google.com/careers](google.com/careers)).
-b) Be a member of the chromium-slack-bot GCE application (see @ajwong in Slack).
-c) Have a copy of the config.json in your directory (see [Google-internal drive](link needed)).
+1. Be a Googler (see [google.com/careers](google.com/careers)).
+2. Be a member of the chromium-slack-bot GCE application (see @ajwong in Slack).
+3. Have a copy of the config.json in your directory (see [Google-internal drive](http://go/chromium-slack-event-bot-config)).
 
 Log into gcloud with your google.com credentials
 ```
