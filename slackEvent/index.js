@@ -66,11 +66,12 @@ exports.slackEvent = async (req, res) => {
     const body = req.body;
 
     // On team_join event, send a message to #slack-admins about who joined.
-    if (body.type == "team_join") {
-      console.info("team_join: userid " + body.user);
+    if (body.type == "event_callback" &&
+	body.event.type == "team_join") {
+      console.info("team_join: userid " + body.event.user.id);
 
       const userInfo = await web.users.info({
-	user: body.user
+	user: body.event.user.id
       });
       const userName = userInfo.user.name;
       const userEmail = userInfo.user.profile.email;
@@ -127,6 +128,8 @@ exports.slackEvent = async (req, res) => {
       return Promise.resolve();
     }
 
+    console.error("Unexpected Slack event");
+    console.error(body);
     const error = new Error('Unexpected Slack event');
     error.code = 405;
     throw error;
