@@ -65,7 +65,8 @@ exports.slackEvent = async (req, res) => {
 
     const body = req.body;
 
-    // On team_join event, send a message to #slack-admins about who joined.
+    // On team_join event, send a message to #slack-admins-bot-spam about who
+    // joined.
     if (body.type == "event_callback" &&
 	body.event.type == "team_join") {
       console.info("team_join: userid " + body.event.user.id);
@@ -80,7 +81,7 @@ exports.slackEvent = async (req, res) => {
       console.info("team_join: email " + userEmail);
 
       web.chat.postMessage({
-        channel: '#slack-admins',
+        channel: '#slack-admins-bot-spam',
         text: "A new user has joined! " + userEmail + " (" + userName + ")"
       });
       res.send("team_join handled");
@@ -108,9 +109,9 @@ exports.slackEvent = async (req, res) => {
 
 	const testPostToAdmins = false;
 	if (testPostToAdmins) {
-	  console.info("!test message: sending notice to #slack-admins");
+	  console.info("!test message: sending notice to #slack-admins-bot-spam");
 	  web.chat.postMessage({
-            channel: '#slack-admins',
+            channel: '#slack-admins-bot-spam',
             text: "A new user has joined! " + userEmail + " (" + userName + ")"
 	  });
 	}
